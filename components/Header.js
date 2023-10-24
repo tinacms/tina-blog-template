@@ -29,8 +29,8 @@ export default function Header() {
                 <Link href=""><RiTwitterXFill /></Link>
                 <Link href=""><RiGithubFill /></Link>
                 <RxDividerVertical className='text-gray-300 dark:text-gray-600' />
-                <button onClick={() => setTheme('light')}><RxSun /></button>
-                <button onClick={() => setTheme('dark')}><RiMoonFill /></button>
+                <button onClick={() => setTheme('light')} className="dark:text-gray-600"><RxSun /></button>
+                <button onClick={() => setTheme('dark')} className='text-gray-300'><RiMoonFill /></button>
             </div>
         </header>
     )
