@@ -18,9 +18,9 @@ export default function Home(props) {
   return (
     <Layout>
       <article className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
-        <h1 className="text-center">{data.post.title}</h1>
-        <p className="prose-sm text-center">{publishDate}</p>
-        <div className="font-charter" data-tina-field={tinaField(data.page, "body")}>
+        <h1 className="text-center" data-tina-field={tinaField(data.post, "title")}>{data.post.title}</h1>
+        <p className="prose-sm text-center" data-tina-field={tinaField(data.post, "date")}>{publishDate}</p>
+        <div className="font-charter" data-tina-field={tinaField(data.post, "body")}>
           <TinaMarkdown content={content} />
         </div>
       </article>

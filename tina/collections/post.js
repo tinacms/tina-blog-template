@@ -17,6 +17,12 @@ export default {
       name: "date",
     },
     {
+      type: "boolean",
+      label: "Draft",
+      name: "draft",
+      description: "Turn on to hide post from public site",
+    },
+    {
       label: "Body",
       name: "body",
       type: "rich-text",
