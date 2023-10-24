@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { RiTwitterXFill, RiGithubFill, RiMoonFill } from 'react-icons/Ri'
-import { RxSun } from 'react-icons/Rx'
+import { RxSun, RxDividerVertical } from 'react-icons/Rx'
 
 export default function Header() {
 
@@ -28,6 +28,7 @@ export default function Header() {
             <div className='flex justify-between gap-4'>
                 <Link href=""><RiTwitterXFill /></Link>
                 <Link href=""><RiGithubFill /></Link>
+                <RxDividerVertical className='text-gray-300 dark:text-gray-600' />
                 <button onClick={() => setTheme('light')}><RxSun /></button>
                 <button onClick={() => setTheme('dark')}><RiMoonFill /></button>
             </div>
