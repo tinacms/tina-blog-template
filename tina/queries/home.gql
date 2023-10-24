@@ -8,6 +8,9 @@ query homePage {
         title
         date
         id
+        _sys {
+          filename
+        }
       }
     }
   }
