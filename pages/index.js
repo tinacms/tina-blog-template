@@ -25,11 +25,11 @@ export default function Home(props) {
         >
           <TinaMarkdown content={content} />
         </div>
-        {props.posts.map((post) => {
+        {data.postConnection.edges.map((edge) => {
           return (
             <div>
-              <h2>{post.title}</h2>
-              <p>{post.date}</p>
+              <h2>{edge.node.title}</h2>
+              <p>{edge.node.date}</p>
             </div>
           );
         })}
@@ -64,7 +64,6 @@ export const getStaticProps = async () => {
       data,
       query,
       variables,
-      posts,
       //myOtherProp: 'some-other-data',
     },
   };
