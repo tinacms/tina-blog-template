@@ -5,13 +5,13 @@ This is a [Tina CMS](https://tina.io/) project.
 Install the project's dependencies:
 
 ```
-yarn install
+npm install
 ```
 
 Run the project locally:
 
 ```
-yarn dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
