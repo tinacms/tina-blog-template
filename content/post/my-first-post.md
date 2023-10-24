@@ -1,10 +1,14 @@
 ---
-title: My First Post
+title: My Very First Blog Post
 date: 2023-10-24T03:00:00.000Z
 draft: true
 ---
 
-Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. 
+
+
+
+Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna.
 
 ## Hello
 

@@ -28,7 +28,7 @@ export default function Home(props) {
             {data.postConnection.edges.map((edge) => {
               return (
                 <li className="my-0">
-                  <Link href={`/posts/${edge.node._sys.filename}`}>{edge.node.title} - {moment(edge.node.date).format('MMM DD, YYYY')}</Link>
+                  <Link href={`/posts/${edge.node._sys.filename}`}>{edge.node.title} <span className="text-gray-400 text-sm"> - {moment(edge.node.date).format('MMM DD, YYYY')}</span></Link>
                 </li>
               );
             })}

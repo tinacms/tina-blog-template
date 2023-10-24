@@ -16,10 +16,10 @@ export default function PostList(props) {
 
   return (
     <Layout>
-      <ul>
+      <ul className="pl-0">
         {postsList.map((post) => (
           <li key={post.node.id}>
-            <Link href={`/posts/${post.node._sys.filename}`}>{post.node.title} - {moment(post.node.date).format('MMM DD, YYYY')}</Link>
+            <Link href={`/posts/${post.node._sys.filename}`}>{post.node.title} <span className="text-gray-400 text-sm"> - {moment(post.node.date).format('MMM DD, YYYY')}</span></Link>
           </li>
         ))}
       </ul>

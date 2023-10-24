@@ -2,7 +2,17 @@ import { Layout } from "../../components/Layout";
 import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../tina/__generated__/client";
+import { TextBox } from "../../components/rich-text/textBox";
 import moment from 'moment';
+
+// const components = {
+//   CaptionedImage, PullQuote, TextBox, Tweet: (props) => {
+//     // console.log(props)
+//     return <Tweet tweetId={props.tweetId} />;
+//   },
+// };
+
+const components = { TextBox };
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -21,7 +31,7 @@ export default function Home(props) {
         <h1 className="text-center" data-tina-field={tinaField(data.post, "title")}>{data.post.title}</h1>
         <p className="prose-sm text-center" data-tina-field={tinaField(data.post, "date")}>{publishDate}</p>
         <div className="font-charter" data-tina-field={tinaField(data.post, "body")}>
-          <TinaMarkdown content={content} />
+          <TinaMarkdown components={components} content={content} />
         </div>
       </article>
     </Layout>
