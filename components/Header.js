@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
-import { RiTwitterXFill, RiGithubFill, RiMoonFill } from 'react-icons/Ri'
+// import { RiTwitterXFill, RiGithubFill, RiMoonFill } from 'react-icons/Ri'
 import { RxSun, RxDividerVertical } from 'react-icons/Rx'
 
 export default function Header() {
 
+    // For dark mode switcher
     const [mounted, setMounted] = useState(false)
     const { setTheme } = useTheme()
 
@@ -26,11 +27,11 @@ export default function Header() {
                 <Link href="/posts">About</Link>
             </div>
             <div className='flex justify-between gap-4'>
-                <Link href=""><RiTwitterXFill /></Link>
-                <Link href=""><RiGithubFill /></Link>
+                {/* <Link href="https://x.com/tinacms"><RiTwitterXFill /></Link>
+                <Link href="https://github.com/tinacms/tina-blog-template"><RiGithubFill /></Link> */}
                 <RxDividerVertical className='text-gray-300 dark:text-gray-600' />
                 <button onClick={() => setTheme('light')} className="dark:text-gray-600"><RxSun /></button>
-                <button onClick={() => setTheme('dark')} className='text-gray-300'><RiMoonFill /></button>
+                {/* <button onClick={() => setTheme('dark')} className='text-gray-300'><RiMoonFill /></button> */}
             </div>
         </header>
     )
