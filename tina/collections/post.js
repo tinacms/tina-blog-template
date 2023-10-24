@@ -2,7 +2,7 @@
  * @type {import('tinacms').Collection}
  */
 export default {
-  label: "Blog Posts",
+  label: "Posts",
   name: "post",
   path: "content/post",
   fields: [
@@ -10,6 +10,8 @@ export default {
       type: "string",
       label: "Title",
       name: "title",
+      required: true,
+      isTitle: true,
     },
     {
       type: "datetime",
@@ -33,5 +35,10 @@ export default {
     router: ({ document }) => {
       return `/posts/${document._sys.filename}`;
     },
+    filename: {
+      slugify: values => {
+        return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(/[^\w\.\/-\s]/gi, "");
+      }
+    }
   },
 };

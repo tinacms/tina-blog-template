@@ -2,7 +2,7 @@
  * @type {import('tinacms').Collection}
  */
 export default {
-  label: "Page Content",
+  label: "Pages",
   name: "page",
   path: "content/page",
   format: "mdx",
@@ -11,6 +11,8 @@ export default {
       name: "title",
       label: "Title",
       type: "string",
+      required: true,
+      isTitle: true,
     },
     {
       name: "body",
@@ -26,5 +28,10 @@ export default {
       }
       return undefined;
     },
+    filename: {
+      slugify: values => {
+        return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(/[^\w\.\/-\s]/gi, "");
+      }
+    }
   },
 };
