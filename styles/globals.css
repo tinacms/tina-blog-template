@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "charter";
+    src:
+        local("charter"),
+        url("/public/font/charter/charter_regular-webfont.woff") format("woff");
+}
+
+body {
+    font-weight: 400;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+h1 {
+    font-size: 2em !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    line-height: 1.3 !important;
+    color: #333;
+}
+
+/* can't override Tailwind Typography in config so doing it here */
+.dark h1 {
+    color: white;
+}
+
+.dark h2 {
+    color: white;
+}
+
+.prose-xl ul {
+    list-style-type: disc;
+}

@@ -12,13 +12,15 @@ export default {
       name: "title",
     },
     {
-      type: "string",
-      label: "Blog Post Body",
+      type: "datetime",
+      label: "Date",
+      name: "date",
+    },
+    {
+      label: "Body",
       name: "body",
+      type: "rich-text",
       isBody: true,
-      ui: {
-        component: "textarea",
-      },
     },
   ],
   ui: {

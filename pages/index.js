@@ -3,6 +3,7 @@ import { Layout } from "../components/Layout";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
 
+
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({
@@ -12,11 +13,15 @@ export default function Home(props) {
   });
 
   const content = data.page.body;
+
   return (
     <Layout>
-      <div data-tina-field={tinaField(data.page, "body")}>
-        <TinaMarkdown content={content} />
-      </div>
+      <article className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
+        <h1 className="text-center">{data.page.title}</h1>
+        <div className="font-charter" data-tina-field={tinaField(data.page, "body")}>
+          <TinaMarkdown content={content} />
+        </div>
+      </article>
     </Layout>
   );
 }

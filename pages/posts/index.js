@@ -13,16 +13,13 @@ export default function PostList(props) {
   const postsList = data.postConnection.edges;
   return (
     <Layout>
-      <h1>Posts</h1>
-      <div>
+      <ul>
         {postsList.map((post) => (
-          <div key={post.node.id}>
-            <Link href={`/posts/${post.node._sys.filename}`}>
-              <a>{post.node._sys.filename}</a>
-            </Link>
-          </div>
+          <li key={post.node.id}>
+            <Link href={`/posts/${post.node._sys.filename}`}>{post.node._sys.filename}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </Layout>
   );
 }

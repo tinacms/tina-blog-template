@@ -1,5 +1,6 @@
 import { Layout } from "../../components/Layout";
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../../tina/__generated__/client";
 
 export default function Home(props) {
@@ -10,17 +11,16 @@ export default function Home(props) {
     data: props.data,
   });
 
+  const content = data.post.body;
   return (
     <Layout>
-      <code>
-        <pre
-          style={{
-            backgroundColor: "lightgray",
-          }}
-        >
-          {JSON.stringify(data.post, null, 2)}
-        </pre>
-      </code>
+      <article className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
+        <h1 className="text-center">{data.post.title}</h1>
+        <p className="prose-sm text-center">{data.post.date}</p>
+        <div className="font-charter" data-tina-field={tinaField(data.page, "body")}>
+          <TinaMarkdown content={content} />
+        </div>
+      </article>
     </Layout>
   );
 }
