@@ -4,6 +4,12 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
 import Link from "next/link";
 import moment from 'moment';
+import { TextBox } from "../components/rich-text/textBox";
+import { Tweets } from "../components/rich-text/tweet";
+
+const components = {
+  TextBox, Tweets,
+};
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -20,7 +26,7 @@ export default function Home(props) {
       <section className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
         <h1 data-tina-field={tinaField(data.page, "title")}>{data.page.title}</h1>
         <article className="font-charter" data-tina-field={tinaField(data.page, "body")} >
-          <TinaMarkdown content={content} />
+          <TinaMarkdown components={components} content={content} />
         </article>
         <section>
           <h2 className="text-3xl mt-8">Posts</h2>

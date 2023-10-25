@@ -44,3 +44,13 @@ h6 {
 .prose-xl ul {
     /* list-style-type: disc; */
 }
+
+.react-tweet-theme img {
+    margin: auto !important;
+}
+
+pre {
+    overflow: scroll;
+    background-color: #333;
+    color: white;
+}
