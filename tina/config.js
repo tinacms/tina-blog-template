@@ -1,5 +1,5 @@
-import { defineConfig, tinaTableTemplate } from "tinacms";
-
+import { defineConfig } from "tinacms";
+import { richTextComponents } from "./richTextSchema";
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -24,6 +24,7 @@ export const config = defineConfig({
     publicFolder: "public", // The public asset folder for your framework
     outputFolder: "admin", // within the public folder
   },
+
   schema: {
     collections: [
       {
@@ -44,101 +45,7 @@ export const config = defineConfig({
             label: "Main Content",
             type: "rich-text",
             isBody: true,
-            templates: [
-              {
-                name: "CaptionedImage",
-                label: "Img with caption",
-                fields: [
-                  {
-                    ui: {
-                      defaultValue:
-                        "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-                    },
-                    name: "imgUrl",
-                    label: "Image URL",
-                    type: "string",
-                  },
-                  {
-                    ui: {
-                      defaultValue: "This is my caption",
-                    },
-                    name: "caption",
-                    label: "Caption",
-                    type: "string",
-                  },
-                  {
-                    ui: {
-                      alt: "This is my caption",
-                    },
-                    name: "alt",
-                    label: "Image alt text",
-                    type: "string",
-                  },
-                ],
-              },
-              {
-                name: "Tweets",
-                label: "Tweet",
-                fields: [
-                  {
-                    name: "tweetId",
-                    label: "Tweet ID",
-                    type: "string",
-                    description: "Unique number (about 20-digits) at the end of the Tweet URL",
-                    ui: {
-                      defaultValue: "1533470815550939136",
-                    },
-                  },
-                ],
-              },
-              {
-                name: "TextBox",
-                label: "Text Box",
-                fields: [
-                  {
-                    name: "text",
-                    label: "Text",
-                    type: "rich-text",
-                    ui: {
-                      defaultValue: "Lorem Ipsum Dolor",
-                    },
-                  },
-                ],
-              },
-              {
-                name: "PullQuote",
-                label: "Pull Quote",
-                fields: [
-                  {
-                    name: "text",
-                    label: "Text",
-                    type: "string",
-                    ui: {
-                      defaultValue: "This is my quote",
-                      component: "textarea",
-                    },
-                  },
-                  {
-                    name: "author",
-                    label: "Author",
-                    description: "Optional",
-                    type: "string",
-                    ui: {
-                      defaultValue: "Herman Melville",
-                    },
-                  },
-                  {
-                    name: "authorLink",
-                    label: "Author Link",
-                    description: "Optional",
-                    type: "string",
-                    ui: {
-                      defaultValue: "https://en.wikipedia.org/wiki/Herman_Melville",
-                    },
-                  },
-                ],
-              },
-            ],
+            templates: richTextComponents
           },
         ],
         ui: {
@@ -183,113 +90,7 @@ export const config = defineConfig({
             name: "body",
             type: "rich-text",
             isBody: true,
-            templates: [
-              tinaTableTemplate,
-              {
-                name: "VideoPlayer",
-                label: "VideoPlayer",
-                fields: [
-                  {
-                    name: "url",
-                    label: "Video URL",
-                    type: "string",
-                  },
-                ],
-                ui: {
-                  defaultItem: {
-                    url: "https://www.youtube.com/watch?v=PcgnJDILv4w&list=PLPar4H9PHKVqoCwZy79PHr8-W_vA3lAOB",
-                  },
-                },
-              },
-              {
-                name: "CaptionedImage",
-                label: "Img with caption",
-                ui: {
-                  defaultItem: {
-                    imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698260502/Random/eat-your-food.jpg",
-                    caption: "Napoleon and Tina",
-                    alt: "Napoleon Dynamite Feeding Llama"
-                  }
-                },
-                fields: [
-                  {
-                    name: "imgUrl",
-                    label: "Image URL",
-                    type: "image",
-                  },
-                  {
-                    name: "caption",
-                    label: "Caption",
-                    type: "string",
-                  },
-                  {
-                    name: "alt",
-                    label: "Image alt text",
-                    type: "string",
-                  },
-                ],
-              },
-              {
-                name: "TweetEmbed",
-                label: "Tweet",
-                ui: {
-                  defaultItem: {
-                    tweetId: "1715750219537621120"
-                  }
-                },
-                fields: [
-                  {
-                    name: "tweetId",
-                    label: "Tweet ID",
-                    type: "string",
-                    description: "Unique number (about 20-digits) at the end of the Tweet URL",
-                  },
-                ],
-              },
-              {
-                name: "TextBox",
-                label: "Text Box",
-                fields: [
-                  {
-                    name: "text",
-                    label: "Text",
-                    type: "rich-text",
-                    ui: {
-                      defaultValue: "Lorem Ipsum Dolor",
-                    },
-                  },
-                ],
-              },
-              {
-                name: "PullQuote",
-                label: "Pull Quote",
-                ui: {
-                  defaultItem: {
-                    text: "How much you wanna make a bet I can throw a football over them mountains?",
-                    author: "Uncle Rico",
-                  }
-                },
-                fields: [
-                  {
-                    name: "text",
-                    label: "Text",
-                    type: "string",
-                  },
-                  {
-                    name: "author",
-                    label: "Author",
-                    description: "Optional",
-                    type: "string",
-                  },
-                  {
-                    name: "authorLink",
-                    label: "Author Link",
-                    description: "Optional",
-                    type: "string",
-                  },
-                ],
-              },
-            ],
+            templates: richTextComponents
           },
         ],
         ui: {
