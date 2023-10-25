@@ -66,6 +66,7 @@ export const config = defineConfig({
         label: "Posts",
         name: "post",
         path: "content/post",
+        format: "mdx",
         fields: [
           {
             type: "string",
