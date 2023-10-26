@@ -1,15 +1,16 @@
-import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Layout } from "../components/Layout";
-import { tinaField, useTina } from "tinacms/dist/react";
-import { client } from "../tina/__generated__/client";
 import Link from "next/link";
-import moment from 'moment';
+import { Layout } from "../components/Layout";
+import { useTina, tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { client } from "../tina/__generated__/client";
 import { TextBox } from "../components/rich-text/textBox";
-import { Tweets } from "../components/rich-text/tweet";
+import { TweetEmbed } from "../components/rich-text/tweet";
+import { PullQuote } from "../components/rich-text/pullQuote";
+import { CaptionedImage } from "../components/rich-text/captionedImage";
+import { VideoPlayer } from "../components/rich-text/videoPlayer";
+import moment from "moment";
 
-const components = {
-  TextBox, Tweets,
-};
+const components = { TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer };
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
