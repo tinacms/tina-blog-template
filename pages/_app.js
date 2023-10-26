@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/globals.css'
 import localFont from 'next/font/local'
-import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 
 // Font files can be colocated inside of `pages`
@@ -31,11 +30,6 @@ const myFont = localFont({
 const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider forcedTheme={Component.theme || undefined} attribute="class">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet" />
-      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   );

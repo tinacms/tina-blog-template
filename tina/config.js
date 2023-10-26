@@ -84,7 +84,7 @@ export const config = defineConfig({
             type: "boolean",
             label: "Draft",
             name: "draft",
-            description: "Turn on to hide post from public site",
+            description: "Remove from the list of posts on your site (but still accessible via direct link)",
           },
           {
             label: "Body",
