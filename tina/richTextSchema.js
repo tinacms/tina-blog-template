@@ -23,8 +23,8 @@ export const richTextComponents = [
         label: "Img with caption",
         ui: {
             defaultItem: {
-                imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698260502/Random/eat-your-food.jpg",
-                caption: "Napoleon and Tina",
+                imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698283915/Random/tina-eat-your-food.jpg",
+                caption: "Tina, eat. Eat the food!",
                 alt: "Napoleon Dynamite Feeding Llama"
             }
         },

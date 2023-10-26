@@ -9,9 +9,7 @@ import { PullQuote } from "../../components/rich-text/pullQuote";
 import { CaptionedImage } from "../../components/rich-text/captionedImage";
 import { VideoPlayer } from "../../components/rich-text/videoPlayer";
 
-const components = {
-  TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer
-};
+const components = { TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer };
 
 
 export default function Home(props) {

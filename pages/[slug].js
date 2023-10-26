@@ -1,13 +1,15 @@
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { client } from "../tina/__generated__/client";
 import { TextBox } from "../components/rich-text/textBox";
-import { pullQuote } from "../components/rich-text/pullQuote";
-import { captionedImage } from "../components/rich-text/captionedImage";
-import { Tweets } from "../components/rich-text/tweet";
+import { TweetEmbed } from "../components/rich-text/tweet";
+import { PullQuote } from "../components/rich-text/pullQuote";
+import { CaptionedImage } from "../components/rich-text/captionedImage";
+import { VideoPlayer } from "../components/rich-text/videoPlayer";
 
-const components = { TextBox };
+const components = { TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer };
+
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -20,9 +22,12 @@ export default function Home(props) {
   const content = data.page.body;
   return (
     <Layout>
-      <div data-tina-field={tinaField(data.page, "body")}>
-        <TinaMarkdown components={components} content={content} />
-      </div>
+      <article className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
+        <h1 className="text-center" data-tina-field={tinaField(data.page, "title")}>{data.page.title}</h1>
+        <div className="font-charter" data-tina-field={tinaField(data.page, "body")}>
+          <TinaMarkdown components={components} content={content} />
+        </div>
+      </article>
     </Layout>
   );
 }
