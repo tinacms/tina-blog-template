@@ -20,7 +20,7 @@ export const richTextComponents = [
     },
     {
         name: "CaptionedImage",
-        label: "Img with caption",
+        label: "Large Image",
         ui: {
             defaultItem: {
                 imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698283915/Random/tina-eat-your-food.jpg",
