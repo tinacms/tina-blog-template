@@ -9,9 +9,12 @@ import { PullQuote } from "../../components/rich-text/pullQuote";
 import { CaptionedImage } from "../../components/rich-text/captionedImage";
 import { VideoPlayer } from "../../components/rich-text/videoPlayer";
 
-const components = { TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer };
-
-
+// adding some components for use in the Rich Text editor and customizing the existing block quote component 
+const components = {
+  TextBox, TweetEmbed, PullQuote, CaptionedImage, VideoPlayer, blockquote: (props) => {
+    return <blockquote className="border-l-4 border-gray-200 dark:border-gray-700 mb-1 leading-8">{props.children}</blockquote>
+  },
+};
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({

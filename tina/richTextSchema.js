@@ -23,9 +23,9 @@ export const richTextComponents = [
         label: "Large Image",
         ui: {
             defaultItem: {
-                imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698283915/Random/tina-eat-your-food.jpg",
-                caption: "Tina, eat. Eat the food!",
-                alt: "Napoleon Dynamite Feeding Llama"
+                imgUrl: "https://res.cloudinary.com/forestry-demo/image/upload/v1698329061/Random/abstract_painting1.jpg",
+                caption: "Abstract art created with Midjourney",
+                alt: "Abstract art"
             }
         },
         fields: [
