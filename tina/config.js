@@ -69,6 +69,33 @@ export const config = defineConfig({
         format: "mdx",
         fields: [
           {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "seoTitle",
+                label: "SEO Title",
+                description: "If left blank the post title will be used",
+              },
+              {
+                type: "string",
+                name: "seoDescription",
+                label: "SEO Description",
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "image",
+                name: "seoImage",
+                label: "SEO Image",
+                description: "Facebook	1200 x 630 pixels, Twitter	1200 x 675 pixels (minimum), LinkedIn	1200 x 627 pixels, Pinterest	1000 x 1500 pixels (2:3 aspect ratio)"
+              }
+            ]
+          },
+          {
             type: "string",
             label: "Title",
             name: "title",
