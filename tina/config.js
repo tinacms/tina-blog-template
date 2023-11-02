@@ -1,5 +1,8 @@
-import { defineConfig } from "tinacms";
 import { richTextComponents } from "./richTextSchema";
+import {
+  TextField,
+  defineConfig
+} from "tinacms";
 
 export const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -69,6 +72,24 @@ export const config = defineConfig({
         format: "mdx",
         fields: [
           {
+            type: "string",
+            label: "Title",
+            name: "title",
+            required: true,
+            isTitle: true,
+          },
+          {
+            type: "datetime",
+            label: "Date",
+            name: "date",
+          },
+          {
+            type: "boolean",
+            label: "Draft",
+            name: "draft",
+            description: "Remove this post from the list of posts so people can't find it (but it's still accessible via direct link)",
+          },
+          {
             type: "object",
             name: "seo",
             label: "SEO",
@@ -91,27 +112,9 @@ export const config = defineConfig({
                 type: "image",
                 name: "seoImage",
                 label: "SEO Image",
-                description: "Facebook	1200 x 630 pixels, Twitter	1200 x 675 pixels (minimum), LinkedIn	1200 x 627 pixels, Pinterest	1000 x 1500 pixels (2:3 aspect ratio)"
+                description: "Facebook	1200 x 630 pixels, Twitter	1200 x 675 pixels (minimum), LinkedIn	1200 x 627 pixels, Pinterest	1000 x 1500 pixels (2:3 aspect ratio)",
               }
             ]
-          },
-          {
-            type: "string",
-            label: "Title",
-            name: "title",
-            required: true,
-            isTitle: true,
-          },
-          {
-            type: "datetime",
-            label: "Date",
-            name: "date",
-          },
-          {
-            type: "boolean",
-            label: "Draft",
-            name: "draft",
-            description: "Remove from the list of posts on your site (but still accessible via direct link)",
           },
           {
             label: "Body",
@@ -122,6 +125,17 @@ export const config = defineConfig({
           },
         ],
         ui: {
+          defaultItem: () => {
+            return {
+              draft: true,
+              date: new Date(),
+              seo: {
+                seoTitle: "",
+                seoDescription: "",
+                seoImage: ""
+              }
+            };
+          },
           router: ({ document }) => {
             return `/posts/${document._sys.filename}`;
           },

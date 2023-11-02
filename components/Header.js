@@ -20,7 +20,7 @@ export default function Header() {
     }
 
     return (
-        <header className="mt-16 mb-20 flex justify-between content-center items-center text-base">
+        <header className="mt-16 mb-20 flex justify-between content-center items-center text-base font-sans">
             <div className='flex gap-4'>
                 <Link href="/">Home</Link>
                 <Link href="/posts">Posts</Link>

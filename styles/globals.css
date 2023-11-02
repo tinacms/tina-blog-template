@@ -2,17 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "charter";
-    src:
-        local("charter"),
-        url("/public/font/charter/charter_regular-webfont.woff") format("woff");
-}
-
 body {
     font-weight: 400;
     color: rgb(75 85 99 / var(--tw-text-opacity));
-    /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+    font-family: Charter, 'Bitstream Charter', 'Charis SIL', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

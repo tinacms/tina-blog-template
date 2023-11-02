@@ -31,7 +31,7 @@ export default function Home(props) {
     <Layout>
       <section className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
         <h1 data-tina-field={tinaField(data.page, "title")}>{data.page.title}</h1>
-        <article className="font-charter" data-tina-field={tinaField(data.page, "body")} >
+        <article data-tina-field={tinaField(data.page, "body")} >
           <TinaMarkdown components={components} content={content} />
         </article>
         <section>
