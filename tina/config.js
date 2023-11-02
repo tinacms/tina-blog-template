@@ -129,11 +129,6 @@ export const config = defineConfig({
             return {
               draft: true,
               date: new Date(),
-              seo: {
-                seoTitle: "",
-                seoDescription: "",
-                seoImage: ""
-              }
             };
           },
           router: ({ document }) => {

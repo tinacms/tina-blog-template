@@ -6,6 +6,7 @@ body {
     font-weight: 400;
     color: rgb(75 85 99 / var(--tw-text-opacity));
     font-family: Charter, 'Bitstream Charter', 'Charis SIL', sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -21,7 +22,7 @@ h4,
 h5,
 h6 {
     font-family: 'Noto Serif JP', serif;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.3 !important;
     color: #333;
     /* font-family: 16px -apple-system, BlinkMacSystemFont, sans-serif; */

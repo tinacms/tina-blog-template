@@ -36,22 +36,22 @@ export default function Home(props) {
     <Layout>
       <Head>
         <title>{data.post.title}</title>
-        <meta name="description" content={data.post.seo.seoDescription} />
+        <meta name="description" content={data.post.seo?.seoDescription} />
 
         {/* Facebook Meta Tags */}
         <meta property="og:url" content={asPath} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={data.post.seo.seoTitle ? data.post.seo.seoTitle : data.post.title} />
-        <meta property="og:description" content={data.post.seo.seoDescription} />
-        <meta property="og:image" content={data.post.seo.seoImage} />
+        <meta property="og:title" content={data.post.seo?.seoTitle ? data.post.seo.seoTitle : data.post.title} />
+        <meta property="og:description" content={data.post.seo?.seoDescription} />
+        <meta property="og:image" content={data.post.seo?.seoImage} />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="article" />
         <meta property="twitter:url" content={asPath} />
-        <meta name="twitter:title" content={data.post.title} />
-        <meta name="twitter:description" content={data.post.seo.seoDescription} />
-        <meta name="twitter:image" content={data.post.seo.seoImage} />
+        <meta name="twitter:title" content={data.post.seo?.seoTitle ? data.post.seo.seoTitle : data.post.title} />
+        <meta name="twitter:description" content={data.post.seo?.seoDescription} />
+        <meta name="twitter:image" content={data.post.seo?.seoImage} />
       </Head>
       <article className="mx-auto w-full max-w-2xl prose-xl text-gray-600 dark:prose-invert dark:text-gray-200">
         <h1 className="text-center" data-tina-field={tinaField(data.post, "title")}>{data.post.title}</h1>
