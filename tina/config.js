@@ -87,7 +87,7 @@ export const config = defineConfig({
             type: "boolean",
             label: "Draft",
             name: "draft",
-            description: "Remove this post from the list of posts so people can't find it (but it's still accessible via direct link)",
+            description: "Removes this post from the list of posts so people can't find it (but it's still accessible via direct link)",
           },
           {
             type: "object",
@@ -140,6 +140,95 @@ export const config = defineConfig({
             }
           }
         },
+      },
+      {
+        label: "Site Settings",
+        name: "settings",
+        path: "content/settings",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          }
+        },
+        fields: [
+          {
+            name: "nav",
+            label: "Site Navigation",
+            type: "object",
+            fields: [
+              {
+                name: "links",
+                label: "Links",
+                type: "object",
+                list: true,
+                fields: [
+                  {
+                    name: "label",
+                    label: "Link Text",
+                    type: "string",
+                  },
+                  {
+                    name: "url",
+                    label: "URL",
+                    type: "string",
+                  }
+                ],
+                ui: {
+                  itemProps: (item) => {
+                    // Field values are accessed by item?.<Field name>
+                    return { label: item?.label };
+                  },
+                },
+              },
+            ]
+          },
+          {
+            name: "socialIcons",
+            label: "Social Icons",
+            type: "object",
+            fields: [
+              {
+                name: "icon",
+                label: "icon",
+                type: "object",
+                list: true,
+                fields: [
+                  {
+                    name: "name",
+                    label: "Name",
+                    type: "string",
+                  },
+                  {
+                    name: "label",
+                    label: "Icons SVG code",
+                    type: "string",
+                    ui: {
+                      component: "textarea",
+                    }
+                  },
+                  {
+                    name: "url",
+                    label: "URL",
+                    type: "string",
+                  }
+                ],
+                ui: {
+                  itemProps: (item) => {
+                    // Field values are accessed by item?.<Field name>
+                    return { label: item?.label };
+                  },
+                },
+              },
+            ]
+          },
+          {
+            name: "footerText",
+            label: "Footer Text",
+            type: "rich-text",
+          },
+        ],
       }
     ],
   },
