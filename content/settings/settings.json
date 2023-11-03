@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "links": [
+      {
+        "label": "Home Page",
+        "url": "/"
+      },
+      {
+        "label": "Posts",
+        "url": "/posts/"
+      },
+      {
+        "label": "About",
+        "url": "/about/"
+      }
+    ]
+  },
+  "footerText": "My New Footer\n"
+}
